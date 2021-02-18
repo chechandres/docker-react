@@ -5,16 +5,13 @@ services:
 before_install:
   - docker build -t chechandres/docker-react -f Dockerfile.dev .
 
-script:
-  - docker run chechandres/docker-react npm run test -- --coverage
-
 deploy:
   provider: elasticbeanstalk
   region: "us-east-2"
-  app: "docker-react"
-  env: "Dockerreact-env"
+  app: "docker-react1"
+  env: "Dockerreact1-env"
   bucket_name: "elasticbeanstalk-us-east-2-065326203721"
-  bucket_path: "docker-react"
+  bucket_path: "docker-react1"
   on:
     branch: master
   access_key_id: $AWS_ACCESS_KEY
