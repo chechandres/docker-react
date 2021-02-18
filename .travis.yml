@@ -6,9 +6,6 @@ services:
 before_install:
   - docker build -t chechandres/docker-react .
 
-script:
-  - docker run -e CI=true chechandres/docker-react npm run test -- --coverage
-
 deploy:
   provider: elasticbeanstalk
   region: "us-east-2"
